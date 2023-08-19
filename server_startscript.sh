@@ -41,7 +41,17 @@ apt-get -y install apache2
 # Install Certbot
 apt-get -y install certbot
 
+# Install mySQL
+apt-get -y install mysql-server mysql-client mysql
+
+# Install wget, php, and php mysql connectors
+apt-get -y install wget php php-cgi php-mysqli php-pear php-mbstring libapache2-mod-php php-common php-phpseclib php-mysql
+
+# Install and configure mariadb
+apt-get -y install mariadb-server mariadb-client
+mysql_secure_installation
+mysql -sfu root < "mysql_secure_installation.sql"
+
+
 # Restart ssh daemon
 systemctl restart sshd.service
-
-
