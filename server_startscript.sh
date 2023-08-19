@@ -63,8 +63,11 @@ chmod 660 /var/www/html/phpMyAdmin/config.inc.php
 chown -R www-data:www-data /var/www/html/phpMyAdmin
 systemctl restart apache2
 
+# Download and install wordpress
+wget https://wordpress.org/latest.tar.gz
+tar -xzvf latest.tar.gz
+
 
 # Restart ssh daemon
 systemctl restart sshd.service
-
 
